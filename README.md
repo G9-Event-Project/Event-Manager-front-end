@@ -1,70 +1,142 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Community Event Manager – Frontend
 
-## Available Scripts
+This is the frontend of the **Community Event Manager**, a full-stack web application built with React (via CDN), Tailwind CSS, and deployed via Vercel. It connects to a Flask REST API backend hosted on Render.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- User authentication (Login, Register)
+- Profile management
+- Create, edit, and delete events
+- View event listings and detailed pages
+- Comment on events
+- Search functionality
+- Responsive design using Tailwind CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup Instructions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clone the Repository
 
-### `npm test`
+```bash
+git clone https://github.com/your-username/event-manager-front-end.git
+cd event-manager-front-end
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Install Dependencies
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you are using Tailwind in development:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Add Tailwind Configuration
 
-### `npm run eject`
+Create or update the following files:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### `tailwind.config.js`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+module.exports = {
+  content: ["./**/*.{html,js,jsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### `postcss.config.js`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
 
-## Learn More
+#### `index.css`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ensure this CSS file is linked in your HTML.
 
-### Code Splitting
+### 4. Build Tailwind (Optional for Production)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+```
 
-### Analyzing the Bundle Size
+### 5. Vercel Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Vercel auto-deploys from GitHub
+- The base URL for the backend is configured in `api.js`
 
-### Making a Progressive Web App
+```js
+const API_BASE_URL = "https://event-managerr-back-endd-13.onrender.com";
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 6. Known Issues
 
-### Advanced Configuration
+- Tailwind CDN (`cdn.tailwindcss.com`) is not recommended in production. We've moved to using PostCSS + Tailwind CLI.
+- CORS errors may occur if backend is not configured with proper headers.
+- `undefined` in fetch URLs indicates a missing `eventId` or `commentId` in component logic.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 7. Troubleshooting
 
-### Deployment
+If `npx tailwindcss` fails with `tailwind: not found`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+rm -rf node_modules package-lock.json
+npm install
+npm install -D tailwindcss postcss autoprefixer
+```
 
-### `npm run build` fails to minify
+### 8. Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Add the following to `package.json` for building Tailwind easily:
+
+```json
+"scripts": {
+  "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+}
+```
+
+## Folder Structure
+
+```
+/components
+  Navbar.jsx
+  Login.jsx
+  Register.jsx
+  Profile.jsx
+  Dashboard.jsx
+  EventForm.jsx
+  EventDetail.jsx
+  CommentSection.jsx
+  SearchBar.jsx
+
+/index.html
+/index.css
+/api.js
+```
+
+## Authors
+
+- Person A – Auth, routing, profile, shared API
+- Person B – Dashboard, events, detail, comment, search
+
+## License
+
+This project is licensed under the MIT License.
