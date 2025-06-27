@@ -1,9 +1,9 @@
-import Login from "./components/Login.js";
-import Register from "./components/Register.js";
-import Profile from "./components/Profile.js";
-import Dashboard from "./components/Dashboard.js"; // Person B
-import EventDetail from "./components/EventDetail.js"; // Person B
-import Navbar from "./components/Navbar.js";
+import Login from "./components/Login.jsx";
+import Register from "./components/Register.jsx";
+import Profile from "./components/Profile.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import EventDetail from "./components/EventDetail.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 const { BrowserRouter, Routes, Route } = ReactRouterDOM;
 
