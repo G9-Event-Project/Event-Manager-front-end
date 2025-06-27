@@ -1,3 +1,4 @@
+import React from 'react';
 import { apiFetch } from "../utils/api.js";
 
 export default function SearchBar({ onResults }) {

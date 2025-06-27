@@ -1,7 +1,7 @@
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { apiFetch } from "../utils/api.js";
-import CommentSection from "./CommentSection.js";
-
-const { useParams } = ReactRouterDOM;
+import CommentSection from "./CommentSection.jsx";
 
 export default function EventDetail() {
   const { id } = useParams();
