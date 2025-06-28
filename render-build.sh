@@ -1,0 +1,6 @@
+corepack enable
+corepack prepare yarn@4.6.0 --activate
+
+yarn install
+
+yarn build
