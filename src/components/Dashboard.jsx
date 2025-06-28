@@ -1,5 +1,6 @@
 import React from 'react';
 import { apiFetch } from "../utils/api.js";
+import SearchBar from "./SearchBar";
 
 export default function Dashboard() {
   const [events, setEvents] = React.useState([]);
@@ -26,6 +27,7 @@ export default function Dashboard() {
           </li>
         ))}
       </ul>
+      <SearchBar />
     </div>
   );
 }
