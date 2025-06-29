@@ -14,14 +14,14 @@ export default function EventDetail() {
       .catch(err => setError(err.message));
   }, [id]);
 
-  if (error) return <p className="text-red-500 p-4">{error}</p>;
-  if (!event) return <p className="p-4">Loading...</p>;
+  if (error) return <p>{error}</p>;
+  if (!event) return <p>Loading...</p>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold">{event.title}</h1>
-      <p className="text-gray-600">{event.date} at {event.location}</p>
-      <p className="mt-4">{event.description}</p>
+    <div>
+      <h1>{event.title}</h1>
+      <p>{event.date} at {event.location}</p>
+      <p>{event.description}</p>
       <CommentSection eventId={id} />
     </div>
   );

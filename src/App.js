@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -9,17 +9,24 @@ import EventDetail from './components/EventDetail';
 import EventForm from './components/EventForm';
 
 const App = () => {
+  const token = localStorage.getItem("token");
+
   return (
     <Router>
-      <Navbar />
+      {token && <Navbar />}
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        {/* Default route: show login if not authenticated */}
+        <Route path="/" element={localStorage.getItem("token") ? <Dashboard /> : <Register />} />
+
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/event/new" element={<EventForm />} />
-        <Route path="/event/:id" element={<EventDetail />} />
+
+        {/* Protected routes  */}
+        <Route path="/profile" element={token ? <Profile /> : <Navigate to="/login" />} />
+        <Route path="/dashboard" element={token ? <Dashboard /> : <Navigate to="/login" />} />
+        <Route path="/event/new" element={token ? <EventForm /> : <Navigate to="/login" />} />
+        <Route path="/event/:id" element={token ? <EventDetail /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
   );

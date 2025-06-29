@@ -14,16 +14,16 @@ export default function Dashboard() {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Community Events</h1>
-      <a href="/event/new" className="text-blue-600 underline mb-4 inline-block">+ Create New Event</a>
-      {error && <p className="text-red-500">{error}</p>}
+      <h1>Community Events</h1>
+      <a href="/event/new">+ Create New Event</a>
+      {error && <p>{error}</p>}
       <ul>
         {events.map(event => (
-          <li key={event.id} className="border-b py-2">
-            <a className="text-lg text-blue-800 underline" href={`/event/${event.id}`}>
+          <li key={event.id}>
+            <a href={`/event/${event.id}`}>
               {event.title}
             </a>
-            <p className="text-sm text-gray-600">{event.date} - {event.location}</p>
+            <p>{event.date} - {event.location}</p>
           </li>
         ))}
       </ul>

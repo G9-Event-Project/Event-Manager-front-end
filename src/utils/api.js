@@ -5,7 +5,7 @@ export async function apiFetch(endpoint, method = "GET", body = null) {
     ...(token && { Authorization: `Bearer ${token}` })
   };
 
-  const res = await fetch(`https://event-managerr-back-endd-13.onrender.com${endpoint}`, {
+  const res = await fetch(`http://127.0.0.1:5000${endpoint}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : null

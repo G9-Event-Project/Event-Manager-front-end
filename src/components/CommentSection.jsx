@@ -25,14 +25,14 @@ export default function CommentSection({ eventId }) {
   };
 
   return (
-    <div className="mt-6">
-      <h2 className="text-lg font-semibold mb-2">Comments</h2>
-      <textarea className="border w-full p-2 mb-2" value={text} onChange={e => setText(e.target.value)} />
-      <button className="bg-green-600 text-white px-4 py-2 rounded mb-4" onClick={postComment}>Post</button>
+    <div>
+      <h2>Comments</h2>
+      <textarea value={text} onChange={e => setText(e.target.value)} />
+      <button onClick={postComment}>Post</button>
       {comments.map(c => (
-        <div key={c.id} className="border-b py-2">
+        <div key={c.id}>
           <p>{c.text}</p>
-          <button onClick={() => deleteComment(c.id)} className="text-red-500 text-sm">Delete</button>
+          <button onClick={() => deleteComment(c.id)}>Delete</button>
         </div>
       ))}
     </div>

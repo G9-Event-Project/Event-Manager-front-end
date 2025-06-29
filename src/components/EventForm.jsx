@@ -33,13 +33,13 @@ export default function EventForm({ isEdit = false, eventId = null }) {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h2 className="text-xl font-bold mb-4">{isEdit ? "Edit Event" : "Create Event"}</h2>
-      <input className="border p-2 mb-2 w-full" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
-      <input className="border p-2 mb-2 w-full" placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} />
-      <input type="date" className="border p-2 mb-2 w-full" value={date} onChange={e => setDate(e.target.value)} />
-      <textarea className="border p-2 mb-2 w-full" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
-      <button onClick={handleSubmit} className="bg-blue-600 text-white px-4 py-2 rounded">
+    <div>
+      <h2>{isEdit ? "Edit Event" : "Create Event"}</h2>
+      <input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
+      <input placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} />
+      <input type="date" value={date} onChange={e => setDate(e.target.value)} />
+      <textarea placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
+      <button onClick={handleSubmit} >
         {isEdit ? "Update" : "Create"}
       </button>
     </div>

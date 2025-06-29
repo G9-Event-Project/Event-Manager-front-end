@@ -6,10 +6,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gray-800 p-4 text-white flex justify-between">
+    <nav className="navbar">
       <div>
-        <a href="/dashboard" className="mr-4">Dashboard</a>
-        <a href="/profile" className="mr-4">Profile</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/profile">Profile</a>
       </div>
       <button onClick={handleLogout}>Logout</button>
     </nav>
