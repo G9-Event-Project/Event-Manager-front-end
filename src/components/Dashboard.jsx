@@ -17,7 +17,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-6">
+    <div className="dashboard">
       <h1>Community Events</h1>
       <a href="/event/new">+ Create New Event</a>
       {error && <p>{error}</p>}

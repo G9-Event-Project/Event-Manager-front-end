@@ -14,9 +14,9 @@ export default function SearchBar({ onResults }) {
   };
 
   return (
-    <div className="mb-4">
-      <input className="border px-4 py-2" placeholder="Search events" value={query} onChange={(e) => setQuery(e.target.value)} />
-      <button onClick={handleSearch} className="bg-blue-700 text-white px-4 py-2 ml-2 rounded">Search</button>
+    <div className="search-bar">
+      <input placeholder="Search events" value={query} onChange={(e) => setQuery(e.target.value)} />
+      <button onClick={handleSearch}>Search</button>
     </div>
   );
 }

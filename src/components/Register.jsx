@@ -19,7 +19,7 @@ export default function Register() {
   };
 
   return (
-    <div>
+    <div className='register-box'>
       <h1>Register</h1>
       <input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />

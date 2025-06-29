@@ -5,25 +5,45 @@ body {
     padding: 0;
 }
 
-form {
-    background: white;
-    padding: 1.5rem;
-    margin: 4rem auto;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.register-box{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    padding-top: 250px;
+    gap: 15px;
 }
 
-input {
+/* .Login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20%; 
+}*/
+     
+
+    form {
+            background: white;
+            padding: 1.5rem;
+            margin: 4rem auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+    
+        }
+
+
+/* input {
     display: block;
     width: 30%;
     margin-bottom: 1rem;
     padding: 0.5rem;
-}
+} */
 
 button {
     padding: 0.5rem 1rem;
@@ -45,10 +65,26 @@ button {
     text-decoration: none;
 }
 
-/* .Login{
+
+.dashboard{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 20%;
-} */
+    padding-top: 15%;
+
+    a{
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-weight: bold;
+        
+    }
+}
+
+.search-bar{
+    max-width: 1000px;
+    padding-bottom: 20%;
+}
