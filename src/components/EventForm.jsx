@@ -24,7 +24,7 @@ export default function EventForm({ isEdit = false, eventId = null }) {
       if (isEdit) {
         await apiFetch(`/api/events/${eventId}`, "PUT", payload);
       } else {
-        await apiFetch("/api/events", "POST", payload);
+        await apiFetch("/api/events/", "POST", payload);
       }
       window.location.href = "/dashboard";
     } catch (err) {

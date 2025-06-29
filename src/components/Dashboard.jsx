@@ -12,6 +12,10 @@ export default function Dashboard() {
       .catch(err => setError(err.message));
   }, []);
 
+  const handleSearchResults = (results) => {
+    setEvents(results);
+  };
+
   return (
     <div className="p-6">
       <h1>Community Events</h1>
@@ -27,7 +31,7 @@ export default function Dashboard() {
           </li>
         ))}
       </ul>
-      <SearchBar />
+      <SearchBar onResults={handleSearchResults} />
     </div>
   );
 }

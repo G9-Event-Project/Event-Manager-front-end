@@ -6,7 +6,7 @@ export default function SearchBar({ onResults }) {
 
   const handleSearch = async () => {
     try {
-      const data = await apiFetch(`/api/search?query=${encodeURIComponent(query)}`);
+      const data = await apiFetch(`/api/events/search?q=${encodeURIComponent(query)}`);
       onResults(data);
     } catch (err) {
       alert(err.message);
