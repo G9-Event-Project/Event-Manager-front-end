@@ -19,7 +19,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <h1>Community Events</h1>
-      <a href="/event/new">+ Create New Event</a>
+      <a href="/event/new" className='button-link'>+ Create New Event</a>
       {error && <p>{error}</p>}
       <ul>
         {events.map(event => (

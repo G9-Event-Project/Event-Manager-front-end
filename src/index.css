@@ -1,90 +1,149 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+/* Reset a bit */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-
-.register-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 250px;
-    gap: 15px;
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    padding: 20px;
 }
 
-/* .Login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 20%; 
-}*/
-     
-
-    form {
-            background: white;
-            padding: 1.5rem;
-            margin: 4rem auto;
-            max-width: 800px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-    
-        }
-
-
-/* input {
-    display: block;
-    width: 30%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-} */
-
-button {
-    padding: 0.5rem 1rem;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
+/* Navbar */
 .navbar {
-    background-color: #333;
-    padding: 1rem;
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    background: #333;
+    padding: 1rem;
+    color: white;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
+    margin-right: 1rem;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar button {
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 
-.dashboard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 15%;
-
-    a{
-        color: #333;
-        text-decoration: none;
-        display: inline-block;
-        padding: 10px 20px;
-        border-radius: 6px;
-        font-weight: bold;
-        
-    }
+input,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
 }
 
-.search-bar{
-    max-width: 1000px;
-    padding-bottom: 20%;
+button {
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+
+.Login,
+.register-box,
+.dashboard,
+.search-bar,
+.comment-box,
+.event-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Event list */
+.dashboard ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard li {
+    background: #e2e2e2;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dashboard a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.dashboard a:hover {
+    text-decoration: underline;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.comment-box {
+    margin-top: 20px;
+}
+
+.comment-box p {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.comment-box button {
+    background: #dc3545;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+/* Profile */
+.profile input {
+    margin-bottom: 10px;
+}
+
+/* Titles */
+h1,
+h2 {
+    margin-bottom: 10px;
+}
+
+.button-link {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
 }
